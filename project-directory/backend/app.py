@@ -10,6 +10,10 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Initialize database
 initialize_db(app)
 
+@app.route('/')
+def index():
+    return "Welcome to the Product Management API"
+
 # Get product info
 @app.route('/product/<int:product_id>', methods=['GET'])
 def get_product_info(product_id):
